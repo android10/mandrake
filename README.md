@@ -31,7 +31,6 @@ The app will run on `http://0.0.0.0:4000/` and you will see a similar output:
     "security" : "***"
 }
 
-2021-03-14 14:04:34.124 [main] INFO  Application - Autoreload is disabled because the development mode is off.
 2021-03-14 14:04:34.287 [main] INFO  Application - Responding at http://0.0.0.0:4000
 ```
 ## Run and setup this Project
