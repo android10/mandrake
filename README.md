@@ -1,4 +1,4 @@
-# Mandrake
+# Mandrake - THIS IS A WIP!!!
 
  - Please refer to the [Ktor Documentation](https://ktor.io/) to understand how this framework works. 
 
@@ -44,6 +44,15 @@ The app will run on `http://0.0.0.0:4000/` and you will see a similar output:
  - Url: [https://mandrake.herokuapp.com/](https://mandrake.herokuapp.com/)
  - 
 
+## Frontend
+
+ - http://0.0.0.0:4000/
+
 ## REST Api
 
  - http://0.0.0.0:4000/api
+ - http://0.0.0.0:4000/api/v1/jobs
+
+## Documentation
+
+ - http://0.0.0.0:4000/docs/api
