@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fernandocejas.mandrake.core.functional
+package com.fernandocejas.mandrake.backend.core.functional
 
 /**
  * Represents a value of one of two possible types (a disjoint union).

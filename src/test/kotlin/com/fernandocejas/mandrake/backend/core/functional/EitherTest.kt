@@ -1,4 +1,4 @@
-package com.fernandocejas.mandrake.core.functional
+package com.fernandocejas.mandrake.backend.core.functional
 
 import com.fernandocejas.mandrake.*
 import org.amshove.kluent.*

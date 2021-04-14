@@ -1,11 +1,15 @@
-package com.fernandocejas.mandrake.core.api
+package com.fernandocejas.mandrake.backend
 
-import com.fernandocejas.mandrake.core.extension.*
+import com.fernandocejas.mandrake.backend.core.extension.*
+import com.fernandocejas.mandrake.backend.docs.*
+import com.fernandocejas.mandrake.backend.features.auth.*
+import com.fernandocejas.mandrake.backend.features.jobs.*
+import io.ktor.application.*
+import io.ktor.routing.*
 
 class RestApi private constructor(){
 
     companion object {
-        private const val REST_API_NAME = "Mandrake REST Api"
         private const val REST_API_SEPARATOR = "/"
         private const val REST_API_URI = "api"
         private const val REST_API_VERSION = "v1"
@@ -21,9 +25,16 @@ class RestApi private constructor(){
         }
 
         fun rootUri() = "$REST_API_SEPARATOR$REST_API_URI"
-        fun name() = REST_API_NAME
         fun version() = REST_API_VERSION
 
         private fun outputMessage(message: String) = println(message)
+    }
+}
+
+fun Application.apiRoutes() {
+    routing {
+        docRoutes()
+        authRoutes()
+        jobRoutes()
     }
 }

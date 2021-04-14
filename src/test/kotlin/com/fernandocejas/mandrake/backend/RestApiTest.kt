@@ -1,7 +1,7 @@
-package com.fernandocejas.mandrake.core.api
+package com.fernandocejas.mandrake.backend
 
 import com.fernandocejas.mandrake.*
-import com.fernandocejas.mandrake.core.extension.*
+import com.fernandocejas.mandrake.backend.core.extension.*
 import org.amshove.kluent.*
 import org.junit.*
 

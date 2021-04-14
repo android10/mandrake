@@ -1,7 +1,9 @@
 package com.fernandocejas.mandrake
 
-import com.fernandocejas.mandrake.features.auth.*
-import com.fernandocejas.mandrake.features.jobs.*
+import com.fernandocejas.mandrake.backend.*
+import com.fernandocejas.mandrake.backend.features.auth.*
+import com.fernandocejas.mandrake.backend.features.jobs.*
+import com.fernandocejas.mandrake.frontend.*
 import io.ktor.application.*
 import io.ktor.features.*
 import io.ktor.routing.*
@@ -21,8 +23,7 @@ private fun Application.setupServer() {
 
 private fun Application.initializeRouting() {
     routing {
-        mainRoutes()
-        authRoutes()
-        jobRoutes()
+        webRoutes()
+        apiRoutes()
     }
 }
