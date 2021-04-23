@@ -17,7 +17,7 @@
 object AppConfiguration {
     const val group = "com.fernandocejas.mandrake"
     const val version = "1.0-SNAPSHOT"
-    const val mainClass = "io.ktor.server.netty.EngineMain"
+    const val mainClass = "io.ktor.server.cio.EngineMain"
     const val name = "mandrake"
 }
 
@@ -50,7 +50,7 @@ object Libraries {
     const val kotlinStd          = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Kotlin.std}"
     const val kotlinCoroutines   = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Kotlin.coroutines}"
     const val ktorServerCore     = "io.ktor:ktor-server-core:${Kotlin.ktor}"
-    const val ktorServerNetty    = "io.ktor:ktor-server-netty:${Kotlin.ktor}"
+    const val ktorServerCio      = "io.ktor:ktor-server-cio:${Kotlin.ktor}"
     const val ktorSerialization  = "io.ktor:ktor-serialization:${Kotlin.ktor}"
     const val gson               = "io.ktor:ktor-gson:${Kotlin.ktor}"
     const val logback            = "ch.qos.logback:logback-classic:${Versions.logBackVersion}"

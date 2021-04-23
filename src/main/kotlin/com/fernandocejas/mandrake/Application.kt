@@ -7,7 +7,7 @@ import io.ktor.features.*
 import io.ktor.gson.*
 import io.ktor.routing.*
 
-fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
+fun main(args: Array<String>): Unit = io.ktor.server.cio.EngineMain.main(args)
 
 fun Application.module() {
     setupServer()

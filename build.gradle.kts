@@ -28,7 +28,7 @@ dependencies {
     implementation(Libraries.kotlinStd)
     implementation(Libraries.kotlinCoroutines)
     implementation(Libraries.ktorServerCore)
-    implementation(Libraries.ktorServerNetty)
+    implementation(Libraries.ktorServerCio)
     implementation(Libraries.ktorSerialization)
     implementation(Libraries.logback)
     implementation(Libraries.gson)
