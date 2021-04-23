@@ -50,6 +50,10 @@ The app will run on `http://0.0.0.0:4000/` and you will see a similar output:
  - http://0.0.0.0:4000/api
  - http://0.0.0.0:4000/api/v1/jobs
 
+### Endpoints
+ - ???
+ - ???
+
 ## Documentation
 
  - http://0.0.0.0:4000/docs/api

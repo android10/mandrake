@@ -10,14 +10,35 @@ const val JOBS_URI = "/jobs"
 fun Application.jobRoutes() {
     routing {
         createJobRoute()
+        runJobRoute()
+        stopJobRoute()
         jobsByIdRoute()
         allJobsRoute()
+        deleteJobRoute()
     }
 }
 
 private fun Route.createJobRoute() {
     post(createEndpoint(JOBS_URI)) {
         call.respondText("createJobRoute()")
+    }
+}
+
+private fun Route.runJobRoute() {
+    post(createEndpoint("$JOBS_URI/{id}/run")) {
+        call.respondText("runJobRoute()")
+    }
+}
+
+private fun Route.stopJobRoute() {
+    post(createEndpoint("$JOBS_URI/{id}/stop")) {
+        call.respondText("stopJobRoute()")
+    }
+}
+
+private fun Route.deleteJobRoute() {
+    delete(createEndpoint("$JOBS_URI/{id}")) {
+        call.respondText("deleteJobRoute()")
     }
 }
 
