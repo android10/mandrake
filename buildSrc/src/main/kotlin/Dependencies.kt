@@ -22,7 +22,7 @@ object AppConfiguration {
 }
 
 object Kotlin {
-    const val std = "1.4.10"
+    const val std = "1.4.30"
     const val ktor = "1.5.2"
     const val coroutines = "1.3.9"
 }
@@ -32,8 +32,9 @@ object BuildPlugins {
         const val gradleVersion = "6.8.3"
     }
 
-    const val application = "application"
-    const val kotlinJvm = "org.jetbrains.kotlin.jvm"
+    const val application   = "application"
+    const val jvm           = "jvm"
+    const val serialization = "plugin.serialization"
 }
 
 object ScriptPlugins {
@@ -50,7 +51,8 @@ object Libraries {
     const val kotlinCoroutines   = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Kotlin.coroutines}"
     const val ktorServerCore     = "io.ktor:ktor-server-core:${Kotlin.ktor}"
     const val ktorServerNetty    = "io.ktor:ktor-server-netty:${Kotlin.ktor}"
-    const val ktorSerialization  = "io.ktor:ktor-client-serialization:${Kotlin.ktor}"
+    const val ktorSerialization  = "io.ktor:ktor-serialization:${Kotlin.ktor}"
+    const val gson               = "io.ktor:ktor-gson:${Kotlin.ktor}"
     const val logback            = "ch.qos.logback:logback-classic:${Versions.logBackVersion}"
 }
 

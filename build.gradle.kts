@@ -6,8 +6,11 @@ application {
 }
 
 plugins {
+    // Language Specific Plugins
+    kotlin(BuildPlugins.jvm)
+    kotlin(BuildPlugins.serialization) version Kotlin.std
+
     // Application Specific Plugins
-    id(BuildPlugins.kotlinJvm)
     id(BuildPlugins.application)
 
     // Internal Script plugins
@@ -28,6 +31,7 @@ dependencies {
     implementation(Libraries.ktorServerNetty)
     implementation(Libraries.ktorSerialization)
     implementation(Libraries.logback)
+    implementation(Libraries.gson)
 
     // Test dependencies
     testImplementation(TestLibraries.junit4)
