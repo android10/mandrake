@@ -36,7 +36,10 @@ The app will run on `http://0.0.0.0:4000/` and you will see a similar output:
 ## Run and setup this Project
 
  - [ ] Containerize the app. 
- - [ ] ???
+ - [ ] [Authentication and Authorization](https://ktor.io/docs/authentication.html)
+ - [ ] [Implement SSL](https://ktor.io/docs/ssl.html) with [Let's Encrypt](https://letsencrypt.org/)
+ - [ ] [Metrics and Performance Monitoring](https://ktor.io/docs/dropwizard-metrics.html)
+ - [ ] [Error Handling](https://ktor.io/docs/status-pages.html)
 
 ## Deploy to Heroku
 
