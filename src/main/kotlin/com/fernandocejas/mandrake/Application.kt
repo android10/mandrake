@@ -1,7 +1,7 @@
 package com.fernandocejas.mandrake
 
 import com.fernandocejas.mandrake.backend.*
-import com.fernandocejas.mandrake.frontend.*
+import com.fernandocejas.mandrake.backend.info.*
 import io.ktor.application.*
 import io.ktor.features.*
 import io.ktor.gson.*
@@ -27,7 +27,7 @@ private fun Application.setupServer() {
 
 private fun Application.initializeRouting() {
     routing {
-        webRoutes()
+        infoRoutes()
         apiRoutes()
     }
 }

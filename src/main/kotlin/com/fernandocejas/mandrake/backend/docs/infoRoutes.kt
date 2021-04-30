@@ -1,6 +1,7 @@
 package com.fernandocejas.mandrake.backend.docs
 
 import com.fernandocejas.mandrake.backend.*
+import com.fernandocejas.mandrake.backend.info.*
 import io.ktor.application.*
 import io.ktor.response.*
 import io.ktor.routing.*
@@ -14,7 +15,7 @@ fun Application.docRoutes() {
 }
 
 private fun Route.docRoute() {
-    get(DOCS_URI.plus(RestApi.rootUri())) {
+    get(INFO_URI.plus(RestApi.rootUri())) {
         call.respondText("THIS IS THE DOCUMENTATION")
     }
 }
