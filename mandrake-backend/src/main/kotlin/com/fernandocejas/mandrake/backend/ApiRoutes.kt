@@ -1,7 +1,7 @@
 package com.fernandocejas.mandrake.backend
 
 import com.fernandocejas.mandrake.backend.core.extension.*
-import com.fernandocejas.mandrake.backend.docs.*
+import com.fernandocejas.mandrake.backend.features.docs.*
 import com.fernandocejas.mandrake.backend.features.auth.*
 import com.fernandocejas.mandrake.backend.features.jobs.*
 import io.ktor.application.*
@@ -33,7 +33,6 @@ class RestApi private constructor(){
 
 fun Application.apiRoutes() {
     routing {
-        docRoutes()
         authRoutes()
         jobRoutes()
     }
