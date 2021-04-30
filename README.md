@@ -1,67 +1,25 @@
 # Mandrake - THIS IS A WIP!!!
 
- - Please refer to the [Ktor Documentation](https://ktor.io/) to understand how this framework works. 
+ - Mandrake Backend
+ - Mandrake Frontend
 
-## Gradle Tasks
+## License
 
- - `./gradlew clean`
- - `./gradlew build`
- - `./gradlew build -t` -> for auto-reloading. See below.
- - `./gradlew runDev`
- - `./gradlew runUnitTests`
+    Copyright 2021 Fernando Cejas
 
-## Run and setup this Project - Development
- 
- - Application configuration can be found in the `application.conf` file.
- - In order to auto reload changes, run `./gradlew build -t` in a terminal (from root directory). 
- - In another terminal, run the server by executing `./gradlew runDev` (from root directory).
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-The app will run on `http://0.0.0.0:4000/` and you will see a similar output:
+       http://www.apache.org/licenses/LICENSE-2.0
 
-```bash 
-2021-03-14 14:04:34.098 [main] TRACE Application - {
-    ...
-    "application" : {
-        ...
-    },
-    ...
-    "deployment" : {
-        ...
-        "port" : 4000
-    },
-    # Content hidden
-    "security" : "***"
-}
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 
-2021-03-14 14:04:34.287 [main] INFO  Application - Responding at http://0.0.0.0:4000
-```
 
-## Deploy to Heroku
+![https://fernandocejas.com](https://github.com/android10/Sample-Data/blob/master/android10/android10_logo_big.png)
 
- - Url: [https://mandrake.herokuapp.com/](https://mandrake.herokuapp.com/)
- - 
-
-## Frontend
-
- - http://0.0.0.0:4000/
-
-## REST Api
-
- - http://0.0.0.0:4000/api
- - http://0.0.0.0:4000/api/v1/jobs
-
-### Endpoints
- - ???
- - ???
-
-## Documentation
-
- - http://0.0.0.0:4000/docs/api
-
-## TODOs
-
- - [ ] Containerize the app.
- - [ ] [Authentication and Authorization](https://ktor.io/docs/authentication.html)
- - [ ] [Implement SSL](https://ktor.io/docs/ssl.html) with [Let's Encrypt](https://letsencrypt.org/)
- - [ ] [Metrics and Performance Monitoring](https://ktor.io/docs/dropwizard-metrics.html)
- - [ ] [Error Handling](https://ktor.io/docs/status-pages.html)
+<a href="https://www.buymeacoffee.com/android10" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
