@@ -1,6 +1,8 @@
 package com.fernandocejas.mandrake.backend.features.jobs
 
 import com.fernandocejas.mandrake.backend.RestApi.Companion.createEndpoint
+import com.fernandocejas.mandrake.backend.core.interactor.*
+import com.fernandocejas.mandrake.backend.core.interactor.UseCase.*
 import io.ktor.application.*
 import io.ktor.response.*
 import io.ktor.routing.*
@@ -50,7 +52,13 @@ private fun Route.deleteJobRoute() {
 }
 
 private fun Route.allJobsRoute() {
+//    Lazy inject GetJobs UseCase from within a Ktor Route
+//    val service by inject<GetJobs>()
+    val getJobs = GetJobs()
+
     get(createEndpoint(JOBS_URI)) {
+        // TODO: Deal with the result
+        getJobs.run(None()).fold({}, {})
         call.respondText("allJobsRoute()")
     }
 }
