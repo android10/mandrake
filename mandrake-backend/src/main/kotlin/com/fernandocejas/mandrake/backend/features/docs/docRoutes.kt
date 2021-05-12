@@ -4,11 +4,9 @@ import io.ktor.application.*
 import io.ktor.response.*
 import io.ktor.routing.*
 
-const val DOCS_URI = "/"
-
 fun Application.docRoutes() {
     routing {
-        get(DOCS_URI) {
+        get("/") {
             call.respondText("HERE IS THE DOCUMENTATION.")
         }
     }

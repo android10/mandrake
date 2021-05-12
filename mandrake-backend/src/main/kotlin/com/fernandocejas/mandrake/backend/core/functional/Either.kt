@@ -65,6 +65,19 @@ sealed class Either<out L, out R> {
             is Left -> fnL(a)
             is Right -> fnR(b)
         }
+
+    /**
+     * Applies fnL if this is a Left or fnR if this is a Right.
+     *
+     * Kotlin Coroutines Support.
+     * @see Left
+     * @see Right
+     */
+    suspend fun <T> coFold(fnL: suspend (L) -> T?, fnR: suspend (R) -> T?): T? =
+        when (this) {
+            is Left -> fnL(a)
+            is Right -> fnR(b)
+        }
 }
 
 /**
@@ -90,7 +103,7 @@ fun <T, L, R> Either<L, R>.flatMap(fn: (R) -> Either<L, T>): Either<L, T> =
  * the onFailure functionality passed as a parameter, but, overall will still return an either
  * object so you chain calls.
  */
-fun <L, R> Either<L, R>.onFailure(fn: (failure: L) -> Unit): Either<L, R> =
+infix fun <L, R> Either<L, R>.onFailure(fn: (failure: L) -> Unit): Either<L, R> =
     this.apply { if (this is Either.Left) fn(a) }
 
 /**
@@ -98,15 +111,18 @@ fun <L, R> Either<L, R>.onFailure(fn: (failure: L) -> Unit): Either<L, R> =
  * the onSuccess functionality passed as a parameter, but, overall will still return an either
  * object so you chain calls.
  */
-fun <L, R> Either<L, R>.onSuccess(fn: (success: R) -> Unit): Either<L, R> =
+infix fun <L, R> Either<L, R>.onSuccess(fn: (success: R) -> Unit): Either<L, R> =
     this.apply { if (this is Either.Right) fn(b) }
 
 /**
  * Right-biased map() FP convention which means that Right is assumed to be the default case
  * to operate on. If it is Left, operations like map, flatMap, ... return the Left value unchanged.
  */
-fun <T, L, R> Either<L, R>.map(fn: (R) -> (T)): Either<L, T> = this.flatMap(fn.c(::right))
-
+fun <L, R, T> Either<L, R>.map(fn: (R) -> (T)): Either<L, T> =
+    when (this) {
+        is Either.Left -> Either.Left(a)
+        is Either.Right -> Either.Right(fn(b))
+    }
 /**
  * Returns the value from this `Right` or the given argument if this is a `Left`.
  * Right(12).getOrElse(17) RETURNS 12 and Left(12).getOrElse(17) RETURNS 17

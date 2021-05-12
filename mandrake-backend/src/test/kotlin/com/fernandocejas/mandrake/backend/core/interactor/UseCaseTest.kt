@@ -22,7 +22,7 @@ class UseCaseTest : UnitTest() {
     data class MyParams(val name: String)
 
     private inner class MyUseCase : UseCase<MyType, MyParams>() {
-        override suspend fun run(params: MyParams) = Either.Right(MyType(TYPE_TEST))
+        override fun run(params: MyParams) = Either.Right(MyType(TYPE_TEST))
     }
 
     companion object {

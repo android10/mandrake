@@ -1,6 +1,7 @@
 package com.fernandocejas.mandrake.backend.core.functional
 
 import com.fernandocejas.mandrake.*
+import kotlinx.coroutines.*
 import org.amshove.kluent.*
 import org.junit.*
 
@@ -22,6 +23,24 @@ class EitherTest : UnitTest() {
 
         val foldResult = "Fold Result"
         val result = either.fold({ foldResult }) { fail("Shouldn't be executed") }
+
+        result shouldBe foldResult
+    }
+
+    @Test
+    fun `given coFold is called, when either is Right, applies fnR and returns its result`() = runBlocking {
+        either = Either.Right("Success")
+        val result = either.coFold({ fail("Shouldn't be executed") }) { "hello" }
+
+        result shouldBe "hello"
+    }
+
+    @Test
+    fun `given coFold is called, when either is Left, applies fnL and returns its result`() = runBlocking {
+        either = Either.Left(12)
+
+        val foldResult = "Fold Result"
+        val result = either.coFold({ foldResult }) { fail("Shouldn't be executed") }
 
         result shouldBe foldResult
     }
