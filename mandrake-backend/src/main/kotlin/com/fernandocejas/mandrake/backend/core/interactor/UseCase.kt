@@ -20,7 +20,7 @@ import com.fernandocejas.mandrake.backend.core.functional.*
 import kotlinx.coroutines.*
 
 /**
- * Abstract class for a Use Case (Interactor in terms of Clean Architecture).
+ * Abstract class for a Use Case (Interactor in terms of Clean Architecture approach).
  * This abstraction represents an execution unit for different use cases (this means that any use
  * case in the application should implement this contract).
  *
@@ -29,6 +29,16 @@ import kotlinx.coroutines.*
  */
 abstract class UseCase<out Type, in Params> where Type : Any {
 
+    /**
+     * The main function for the execution unit [UseCase]. It basically
+     * follow the rules of a `Command Patter`.
+     *
+     * Keep in mind that this function should not be called directly,
+     * unless we want an asynchronous call, otherwise use the operator
+     * by not calling explicitly this [UseCase.run] fn.
+     *
+     * @see [UseCase.invoke].
+     */
     abstract fun run(params: Params): Either<Failure, Type>
 
     suspend operator fun invoke(params: Params): Either<Failure, Type> =
