@@ -15,8 +15,10 @@ fun Application.module() {
 }
 
 private fun Application.setupServer() {
-    install(DefaultHeaders)
     install(CallLogging)
+    install(DefaultHeaders) {
+        header("Mandrake-Developer", "Fernando Cejas")
+    }
     install(ContentNegotiation) {
         gson {
             setPrettyPrinting()
