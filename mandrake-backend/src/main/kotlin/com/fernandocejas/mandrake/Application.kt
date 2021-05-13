@@ -30,7 +30,7 @@ private fun Application.setupServer() {
     }
     install(Koin) {
         slf4jLogger()
-        modules(jobModule)
+        modules(jobsModule)
     }
 }
 
