@@ -45,6 +45,7 @@ object ScriptPlugins {
 object Libraries {
     object Versions {
         const val logBackVersion = "1.2.3"
+        const val koinVersion = "3.0.1"
     }
 
     const val kotlinStd          = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Kotlin.std}"
@@ -54,6 +55,8 @@ object Libraries {
     const val ktorSerialization  = "io.ktor:ktor-serialization:${Kotlin.ktor}"
     const val gson               = "io.ktor:ktor-gson:${Kotlin.ktor}"
     const val logback            = "ch.qos.logback:logback-classic:${Versions.logBackVersion}"
+    const val koin               = "io.insert-koin:koin-ktor:${Versions.koinVersion}"
+    const val koinLogger         = "io.insert-koin:koin-logger-slf4j:${Versions.koinVersion}"
 }
 
 object TestLibraries {

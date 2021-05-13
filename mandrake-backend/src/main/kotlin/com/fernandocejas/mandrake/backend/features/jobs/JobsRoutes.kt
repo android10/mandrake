@@ -6,13 +6,14 @@ import com.fernandocejas.mandrake.backend.core.interactor.UseCase.*
 import io.ktor.application.*
 import io.ktor.response.*
 import io.ktor.routing.*
+import org.koin.ktor.ext.*
 
-fun Application.jobRoutes() {
+fun Application.jobsRoutes() {
     routing {
         createJobRoute()
         runJobRoute()
         stopJobRoute()
-        jobsByIdRoute()
+        getJobByIdRoute()
         allJobsRoute()
         deleteJobRoute()
     }
@@ -24,7 +25,7 @@ private fun Route.createJobRoute() {
     }
 }
 
-private fun Route.jobsByIdRoute() {
+private fun Route.getJobByIdRoute() {
     get(createEndpoint("/jobs/{id}")) {
         call.respondText("Job ID: ${call.parameters["id"].toString()}")
     }
@@ -49,7 +50,7 @@ private fun Route.deleteJobRoute() {
 }
 
 private fun Route.allJobsRoute() {
-    val getJobs = GetJobs() //TODO: DI
+    val getJobs by inject<GetJobs>()
 
     get(createEndpoint("/jobs")) {
         handleResponse(getJobs(None()))

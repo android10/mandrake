@@ -1,4 +1,4 @@
 package com.fernandocejas.mandrake.backend.features.jobs
 
-class CreateJob {
+internal class CreateJob {
 }

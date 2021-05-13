@@ -32,6 +32,8 @@ dependencies {
     implementation(Libraries.ktorSerialization)
     implementation(Libraries.logback)
     implementation(Libraries.gson)
+    implementation(Libraries.koin)
+    implementation(Libraries.koinLogger)
 
     // Test dependencies
     testImplementation(TestLibraries.junit4)
