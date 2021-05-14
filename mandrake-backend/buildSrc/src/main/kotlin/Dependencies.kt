@@ -46,6 +46,8 @@ object Libraries {
     object Versions {
         const val logBackVersion = "1.2.3"
         const val koinVersion = "3.0.1"
+        const val exposedVersion = "0.31.1"
+        const val sqliteJdbcVersion = "3.34.0"
     }
 
     const val kotlinStd          = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Kotlin.std}"
@@ -57,6 +59,10 @@ object Libraries {
     const val logback            = "ch.qos.logback:logback-classic:${Versions.logBackVersion}"
     const val koin               = "io.insert-koin:koin-ktor:${Versions.koinVersion}"
     const val koinLogger         = "io.insert-koin:koin-logger-slf4j:${Versions.koinVersion}"
+    const val exposedCore        = "org.jetbrains.exposed:exposed-core:${Versions.exposedVersion}"
+    const val exposedDao         = "org.jetbrains.exposed:exposed-dao:${Versions.exposedVersion}"
+    const val exposedJdbc        = "org.jetbrains.exposed:exposed-jdbc:${Versions.exposedVersion}"
+    const val sqliteJdbc         = "org.xerial:sqlite-jdbc:${Versions.sqliteJdbcVersion}"
 }
 
 object TestLibraries {

@@ -34,6 +34,10 @@ dependencies {
     implementation(Libraries.gson)
     implementation(Libraries.koin)
     implementation(Libraries.koinLogger)
+    implementation(Libraries.exposedCore)
+    implementation(Libraries.exposedDao)
+    implementation(Libraries.exposedJdbc)
+    implementation(Libraries.sqliteJdbc)
 
     // Test dependencies
     testImplementation(TestLibraries.junit4)
