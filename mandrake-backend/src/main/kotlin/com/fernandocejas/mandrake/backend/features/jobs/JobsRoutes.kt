@@ -21,7 +21,7 @@ fun Application.jobsRoutes() {
 
 private fun Route.createJobRoute() {
     post(createEndpoint("/jobs")) {
-        call.respond(Job("1", "test Job", System.currentTimeMillis()))
+        call.respond(Job(1, "test Job", System.currentTimeMillis()))
     }
 }
 

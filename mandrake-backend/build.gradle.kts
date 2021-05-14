@@ -36,6 +36,7 @@ dependencies {
     implementation(Libraries.koinLogger)
     implementation(Libraries.exposedCore)
     implementation(Libraries.exposedDao)
+    implementation(Libraries.exposedJodaTime)
     implementation(Libraries.exposedJdbc)
     implementation(Libraries.sqliteJdbc)
 

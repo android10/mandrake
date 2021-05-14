@@ -1,8 +1,9 @@
 package com.fernandocejas.mandrake
 
 import com.fernandocejas.mandrake.backend.*
+import com.fernandocejas.mandrake.backend.core.data.*
+import com.fernandocejas.mandrake.backend.core.di.*
 import com.fernandocejas.mandrake.backend.features.docs.*
-import com.fernandocejas.mandrake.backend.features.jobs.di.*
 import io.ktor.application.*
 import io.ktor.features.*
 import io.ktor.gson.*
@@ -14,14 +15,13 @@ fun main(args: Array<String>): Unit = io.ktor.server.cio.EngineMain.main(args)
 
 fun Application.module() {
     setupServer()
+    initializeDatabase()
     initializeRouting()
 }
 
 private fun Application.setupServer() {
     install(CallLogging)
-    install(DefaultHeaders) {
-        header("Mandrake-Developer", "Fernando Cejas")
-    }
+    install(DefaultHeaders)
     install(ContentNegotiation) {
         gson {
             setPrettyPrinting()
@@ -30,8 +30,13 @@ private fun Application.setupServer() {
     }
     install(Koin) {
         slf4jLogger()
-        modules(jobsModule)
+        modules(applicationModules)
     }
+}
+
+fun Application.initializeDatabase() {
+    val dataConnector by inject<DataConnector>()
+    dataConnector.initialize()
 }
 
 private fun Application.initializeRouting() {

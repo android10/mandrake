@@ -61,6 +61,7 @@ object Libraries {
     const val koinLogger         = "io.insert-koin:koin-logger-slf4j:${Versions.koinVersion}"
     const val exposedCore        = "org.jetbrains.exposed:exposed-core:${Versions.exposedVersion}"
     const val exposedDao         = "org.jetbrains.exposed:exposed-dao:${Versions.exposedVersion}"
+    const val exposedJodaTime    = "org.jetbrains.exposed:exposed-jodatime:${Versions.exposedVersion}"
     const val exposedJdbc        = "org.jetbrains.exposed:exposed-jdbc:${Versions.exposedVersion}"
     const val sqliteJdbc         = "org.xerial:sqlite-jdbc:${Versions.sqliteJdbcVersion}"
 }

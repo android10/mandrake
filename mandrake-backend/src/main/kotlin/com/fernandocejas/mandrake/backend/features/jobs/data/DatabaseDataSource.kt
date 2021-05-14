@@ -6,7 +6,7 @@ import com.fernandocejas.mandrake.backend.core.functional.*
 class DatabaseDataSource {
     fun getAllJobs(): Either<Failure, List<JobEntity>> {
         // TODO: Handle correctly db errors.
-        val jobEntities = listOf(JobEntity(), JobEntity())
+        val jobEntities = emptyList<JobEntity>()
         return Either.Right(jobEntities)
     }
 }
