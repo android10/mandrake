@@ -10,4 +10,11 @@ val Application.configuration: Configuration
         return config
     }
 
+//TODO: Work on Feature Flags
+val Application.features: Configuration
+    get() {
+        val config by inject<Configuration>()
+        return config
+    }
+
 fun failFast(reason: String): Nothing = throw IllegalStateException(reason)
