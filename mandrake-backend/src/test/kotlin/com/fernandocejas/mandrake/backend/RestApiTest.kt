@@ -12,7 +12,7 @@ class RestApiTest : UnitTest() {
         val endpointString = "/USERS"
         val createdEndpoint = RestApi.createEndpoint(endpointString)
 
-        createdEndpoint shouldEqual "$REST_API_URI/users"
+        createdEndpoint shouldBeEqualTo "$REST_API_URI/users"
     }
 
     @Test(expected = IllegalArgumentException::class)
@@ -32,12 +32,12 @@ class RestApiTest : UnitTest() {
 
     @Test
     fun `given version is called, returns current rest api version`() {
-        RestApi.version() shouldEqual REST_API_CURRENT_VERSION
+        RestApi.version() shouldBeEqualTo REST_API_CURRENT_VERSION
     }
 
     @Test
     fun `given rootUri is called, returns the rest api root starting endpoint`() {
-        RestApi.rootUri() shouldEqual REST_API_ROOT_URI
+        RestApi.rootUri() shouldBeEqualTo REST_API_ROOT_URI
     }
 
     companion object {

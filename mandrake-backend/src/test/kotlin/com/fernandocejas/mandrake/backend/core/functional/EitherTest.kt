@@ -28,21 +28,25 @@ class EitherTest : UnitTest() {
     }
 
     @Test
-    fun `given coFold is called, when either is Right, applies fnR and returns its result`() = runBlocking {
-        either = Either.Right("Success")
-        val result = either.coFold({ fail("Shouldn't be executed") }) { "hello" }
+    fun `given coFold is called, when either is Right, applies fnR and returns its result`() {
+        runBlocking {
+            either = Either.Right("Success")
+            val result = either.coFold({ fail("Shouldn't be executed") }) { "hello" }
 
-        result shouldBe "hello"
+            result shouldBeEqualTo "hello"
+        }
     }
 
     @Test
-    fun `given coFold is called, when either is Left, applies fnL and returns its result`() = runBlocking {
-        either = Either.Left(12)
+    fun `given coFold is called, when either is Left, applies fnL and returns its result`(){
+        runBlocking {
+            either = Either.Left(12)
+    
+            val foldResult = "Fold Result"
+            val result = either.coFold({ foldResult }) { fail("Shouldn't be executed") }
 
-        val foldResult = "Fold Result"
-        val result = either.coFold({ foldResult }) { fail("Shouldn't be executed") }
-
-        result shouldBe foldResult
+            result shouldBe foldResult
+        }
     }
 
     @Test
@@ -54,7 +58,7 @@ class EitherTest : UnitTest() {
         }
 
         result.isLeft shouldBe true
-        result shouldEqual either
+        result shouldBeEqualTo either
     }
 
     @Test
@@ -89,7 +93,7 @@ class EitherTest : UnitTest() {
 
         var methodCalled = false
         val result = either.onSuccess {
-            it shouldEqual success
+            it shouldBeEqualTo success
             methodCalled = true
         }
 
@@ -119,7 +123,7 @@ class EitherTest : UnitTest() {
             resultValue
         }
 
-        result shouldEqual Either.Right(resultValue)
+        result shouldBeEqualTo Either.Right(resultValue)
     }
 
     @Test
@@ -131,6 +135,6 @@ class EitherTest : UnitTest() {
         }
 
         result.isLeft shouldBe true
-        result shouldEqual either
+        result shouldBeEqualTo either
     }
 }

@@ -19,7 +19,6 @@ plugins {
 }
 
 repositories {
-    jcenter()
     mavenCentral()
 }
 
@@ -43,6 +42,7 @@ dependencies {
 
     // Test dependencies
     testImplementation(TestLibraries.junit4)
+    testImplementation(TestLibraries.kotlinTest)
     testImplementation(TestLibraries.mockk)
     testImplementation(TestLibraries.kluent)
     testImplementation(TestLibraries.serverTests)

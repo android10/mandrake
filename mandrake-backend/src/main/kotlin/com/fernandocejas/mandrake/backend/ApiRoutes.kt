@@ -5,6 +5,7 @@ import com.fernandocejas.mandrake.backend.features.auth.*
 import com.fernandocejas.mandrake.backend.features.jobs.*
 import io.ktor.application.*
 import io.ktor.routing.*
+import java.util.*
 
 class RestApi private constructor(){
 
@@ -20,7 +21,7 @@ class RestApi private constructor(){
 
             return "$REST_API_SEPARATOR$REST_API_URI" +
                     "$REST_API_SEPARATOR$REST_API_VERSION" +
-                    uri.toLowerCase().trim()
+                    uri.lowercase(Locale.getDefault()).trim()
         }
 
         fun rootUri() = "$REST_API_SEPARATOR$REST_API_URI"

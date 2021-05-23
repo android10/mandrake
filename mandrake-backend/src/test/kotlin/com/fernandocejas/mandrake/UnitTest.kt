@@ -15,7 +15,7 @@
  */
 package com.fernandocejas.mandrake
 
-import org.junit.Rule
+import org.junit.*
 
 /**
  * Base class for Unit tests. Inherit from it to create test cases which DO NOT contain android

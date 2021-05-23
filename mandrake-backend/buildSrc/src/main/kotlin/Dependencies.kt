@@ -71,10 +71,11 @@ object TestLibraries {
     private object Versions {
         const val junit4 = "4.13.1"
         const val mockk = "1.10.0"
-        const val kluent = "1.14"
+        const val kluent = "1.65"
     }
 
     const val junit4          = "junit:junit:${Versions.junit4}"
+    const val kotlinTest      = "org.jetbrains.kotlin:kotlin-test-junit:${Kotlin.std}"
     const val mockk           = "io.mockk:mockk:${Versions.mockk}"
     const val kluent          = "org.amshove.kluent:kluent:${Versions.kluent}"
     const val serverTests     = "io.ktor:ktor-server-tests:${Kotlin.ktor}"

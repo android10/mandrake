@@ -15,7 +15,7 @@ class UseCaseTest : UnitTest() {
         val params = MyParams(TYPE_PARAM)
         val result = runBlocking { useCase.run(params) }
 
-        result shouldEqual Either.Right(MyType(TYPE_TEST))
+        result shouldBeEqualTo Either.Right(MyType(TYPE_TEST))
     }
 
     data class MyType(val name: String)
