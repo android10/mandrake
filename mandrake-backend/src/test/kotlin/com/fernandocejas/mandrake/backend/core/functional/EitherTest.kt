@@ -41,7 +41,7 @@ class EitherTest : UnitTest() {
     fun `given coFold is called, when either is Left, applies fnL and returns its result`(){
         runBlocking {
             either = Either.Left(12)
-    
+
             val foldResult = "Fold Result"
             val result = either.coFold({ foldResult }) { fail("Shouldn't be executed") }
 
