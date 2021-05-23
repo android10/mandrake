@@ -26,6 +26,7 @@ repositories {
 dependencies {
     // Application dependencies
     implementation(Libraries.kotlinStd)
+    implementation(Libraries.kotlinReflect)
     implementation(Libraries.kotlinCoroutines)
     implementation(Libraries.ktorServerCore)
     implementation(Libraries.ktorServerCio)

@@ -1,6 +1,6 @@
 object Dependencies {
     object Versions {
-        const val KOTLIN_GRADLE_PLUGIN = "1.4.10"
+        const val KOTLIN_GRADLE_PLUGIN = "1.5.0"
     }
 
     const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN_GRADLE_PLUGIN}"
@@ -12,8 +12,6 @@ plugins {
 }
 
 repositories {
-    jcenter()
-    google()
     mavenCentral()
 }
 

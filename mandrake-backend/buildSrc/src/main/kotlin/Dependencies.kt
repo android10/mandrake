@@ -16,20 +16,20 @@
 
 object AppConfiguration {
     const val group = "com.fernandocejas.mandrake"
-    const val version = "1.0-SNAPSHOT"
+    const val version = "0.0.1"
     const val mainClass = "io.ktor.server.cio.EngineMain"
     const val name = "mandrake"
 }
 
 object Kotlin {
-    const val std = "1.4.30"
-    const val ktor = "1.5.2"
-    const val coroutines = "1.3.9"
+    const val std = "1.5.0"
+    const val coroutines = "1.5.0"
+    const val ktor = "1.5.4"
 }
 
 object BuildPlugins {
     object Versions {
-        const val gradleVersion = "6.8.3"
+        const val gradleVersion = "7.0.1"
     }
 
     const val application   = "application"
@@ -45,12 +45,13 @@ object ScriptPlugins {
 object Libraries {
     object Versions {
         const val logBackVersion = "1.2.3"
-        const val koinVersion = "3.0.1"
+        const val koinVersion = "3.0.2"
         const val exposedVersion = "0.31.1"
         const val sqliteJdbcVersion = "3.34.0"
     }
 
     const val kotlinStd          = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Kotlin.std}"
+    const val kotlinReflect      = "org.jetbrains.kotlin:kotlin-reflect:${Kotlin.std}"
     const val kotlinCoroutines   = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Kotlin.coroutines}"
     const val ktorServerCore     = "io.ktor:ktor-server-core:${Kotlin.ktor}"
     const val ktorServerCio      = "io.ktor:ktor-server-cio:${Kotlin.ktor}"
