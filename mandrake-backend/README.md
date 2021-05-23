@@ -1,6 +1,6 @@
 # Mandrake Backend - THIS IS A WIP!!!
 
- - Please refer to the [Ktor Documentation](https://ktor.io/) to understand how this framework works. 
+ - Please refer to the [Ktor Documentation](https://ktor.io/) to understand how this framework works.
 
 ## Gradle Tasks
 
