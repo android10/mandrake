@@ -15,17 +15,9 @@
  */
 package com.fernandocejas.mandrake
 
-import org.junit.*
-
 /**
- * Base class for Unit tests. Inherit from it to create test in isolation where
- * all collaborators are dummy/fake/mock objects.
+ * Base class for Server tests which involve interaction with Ktor, like network calls, etc.
  */
-abstract class UnitTest {
-
-    @Suppress("LeakingThis")
-    @Rule
-    @JvmField val injectMocksRule = InjectMockKsRule.create(this@UnitTest)
-
+abstract class ServerTest {
     fun fail(message: String): Nothing = throw AssertionError(message)
 }

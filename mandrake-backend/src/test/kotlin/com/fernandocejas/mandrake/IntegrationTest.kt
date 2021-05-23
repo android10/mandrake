@@ -18,14 +18,14 @@ package com.fernandocejas.mandrake
 import org.junit.*
 
 /**
- * Base class for Unit tests. Inherit from it to create test in isolation where
- * all collaborators are dummy/fake/mock objects.
+ * Base class for Integration tests. Inherit from it to create database interaction.
  */
-abstract class UnitTest {
+@Suppress("UnnecessaryAbstractClass")
+abstract class IntegrationTest {
 
     @Suppress("LeakingThis")
     @Rule
-    @JvmField val injectMocksRule = InjectMockKsRule.create(this@UnitTest)
+    @JvmField val injectMocksRule = InjectMockKsRule.create(this@IntegrationTest)
 
     fun fail(message: String): Nothing = throw AssertionError(message)
 }
