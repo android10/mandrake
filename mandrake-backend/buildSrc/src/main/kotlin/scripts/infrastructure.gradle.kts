@@ -24,7 +24,7 @@ tasks.named<Wrapper>("wrapper") {
     distributionType = Wrapper.DistributionType.ALL
 }
 
-tasks.register("runDev") {
+tasks.register("runApp") {
     description = "Runs App in Development Mode."
     dependsOn("run")
 }

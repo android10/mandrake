@@ -7,7 +7,7 @@
  - `./gradlew clean`
  - `./gradlew build`
  - `./gradlew build -t` -> for auto-reloading. See below.
- - `./gradlew runDev`
+ - `./gradlew runApp`
  - `./gradlew runUnitTests`
 
 ## Run and setup this Project - Development
