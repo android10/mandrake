@@ -15,6 +15,8 @@
  */
 package com.fernandocejas.mandrake.backend.core.flags
 
+import com.fernandocejas.mandrake.backend.core.config.*
+
 /**
  * Feature flags states (activated/deactivated) can be used as conditionals.
  *
@@ -22,13 +24,20 @@ package com.fernandocejas.mandrake.backend.core.flags
  *
  * ```Flag.Conversations whenActivated { fn } otherwise { fn }```
  */
-internal sealed class Flag(enabled: Boolean) : FeatureFlag(enabled) {
+class FeatureFlags(configuration: Configuration) {
 
-    /**
-     * Defined Feature Flags.
-     * @see "FeatureFlags.kt" file for compile-time feature definition.
-     */
-    object Hello : Flag(true)
-    object Bye : Flag(false)
-    //TODO: this values should come from different build types: DEVELOPMENT, STAGING, PRODUCTION
+    private val activatedFeatures: Set<Feature> = configuration.activatedFeatures
+
+    private fun isFeatureEnabled(feature: Feature) = activatedFeatures.contains(feature)
+
+    fun whenActivated(feature: Feature, fnFeatureEnabled: () -> Unit): Condition {
+        val enabled = isFeatureEnabled(feature)
+        if (enabled) fnFeatureEnabled.invoke(); return Condition(enabled)
+    }
+
+    inner class Condition(private val expression: Boolean) {
+        infix fun otherwise(otherwise: () -> Unit) {
+            if (!expression) otherwise.invoke()
+        }
+    }
 }

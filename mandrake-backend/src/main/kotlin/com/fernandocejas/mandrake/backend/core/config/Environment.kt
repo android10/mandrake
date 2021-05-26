@@ -13,17 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fernandocejas.mandrake.backend.core.flags
+package com.fernandocejas.mandrake.backend.core.config
 
-internal open class FeatureFlag(private val enabled: Boolean) {
-
-    infix fun whenActivated(fnFeatureEnabled: () -> Unit): Condition {
-        if (enabled) fnFeatureEnabled.invoke(); return Condition(enabled)
-    }
-
-    inner class Condition(private val expression: Boolean) {
-        infix fun otherwise(otherwise: () -> Unit) {
-            if (!expression) otherwise.invoke()
-        }
-    }
+enum class Environment {
+    PRODUCTION,
+    STAGING,
+    DEVELOPMENT
 }

@@ -3,6 +3,7 @@ package com.fernandocejas.mandrake
 import com.fernandocejas.mandrake.backend.*
 import com.fernandocejas.mandrake.backend.core.data.*
 import com.fernandocejas.mandrake.backend.core.di.*
+import com.fernandocejas.mandrake.backend.core.health.*
 import com.fernandocejas.mandrake.backend.features.docs.*
 import io.ktor.application.*
 import io.ktor.features.*
@@ -15,6 +16,7 @@ fun main(args: Array<String>): Unit = io.ktor.server.cio.EngineMain.main(args)
 
 fun Application.module() {
     setupServer()
+    sanityCheck()
     initializeDatabase()
     initializeRouting()
 }
@@ -32,6 +34,11 @@ private fun Application.setupServer() {
         slf4jLogger()
         loadModules(environment)
     }
+}
+
+private fun Application.sanityCheck() {
+    val sanityChecker by inject<SanityChecker>()
+    sanityChecker.perform()
 }
 
 fun Application.initializeDatabase() {

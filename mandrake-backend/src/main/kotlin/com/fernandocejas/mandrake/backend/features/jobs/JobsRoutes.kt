@@ -2,6 +2,7 @@ package com.fernandocejas.mandrake.backend.features.jobs
 
 import com.fernandocejas.mandrake.backend.RestApi.Companion.createEndpoint
 import com.fernandocejas.mandrake.backend.core.extension.*
+import com.fernandocejas.mandrake.backend.core.flags.*
 import com.fernandocejas.mandrake.backend.core.interactor.UseCase.*
 import io.ktor.application.*
 import io.ktor.response.*
@@ -26,8 +27,14 @@ private fun Route.createJobRoute() {
 }
 
 private fun Route.getJobByIdRoute() {
+    val featureFlags by inject<FeatureFlags>()
+
     get(createEndpoint("/jobs/{id}")) {
-        call.respondText("Job ID: ${call.parameters["id"].toString()}")
+        var resultHello = String.empty()
+        var resultBye = String.empty()
+        featureFlags.whenActivated(Feature.HELLO) { resultHello = "Hello ACTIVATED" } otherwise { resultHello = "Hello DEACTIVATED" }
+        featureFlags.whenActivated(Feature.BYE) { resultBye = "Bye ACTIVATED" } otherwise { resultBye = "Bye DEACTIVATED" }
+        call.respondText("Job ID: ${call.parameters["id"].toString()} and Result HELLO -> $resultHello and Result BYE -> $resultBye")
     }
 }
 
