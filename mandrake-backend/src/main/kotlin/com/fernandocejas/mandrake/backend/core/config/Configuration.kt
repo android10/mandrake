@@ -33,7 +33,7 @@ class Configuration(private val environment: ApplicationEnvironment) {
 
     private fun mapEnvironment(environment: ApplicationEnvironment): Environment {
         val environmentProperty = environment.config.propertyOrNull(PROPERTY_ENVIRONMENT)
-        requireNotNull(environmentProperty)
+        requireNotNull(environmentProperty) { "INVALID Environment Configuration: Check 'application.conf'" }
 
         return Environment.valueOf(environmentProperty.getString())
     }
