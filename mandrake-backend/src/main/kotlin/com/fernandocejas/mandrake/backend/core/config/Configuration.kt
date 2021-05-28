@@ -42,7 +42,7 @@ class Configuration(private val environment: ApplicationEnvironment,
     private fun populateActivatedFeature(environment: ApplicationEnvironment): Set<Feature> {
         val activatedFeatures: MutableSet<Feature> = mutableSetOf()
 
-        Feature.values().forEach {
+        features.forEach {
             val feature = environment.config.propertyOrNull("${PROPERTY_FEATURES}.${it.name}")
             feature?.getList()?.map { environment ->
                 if (environment == appEnvironment.toString()) {
