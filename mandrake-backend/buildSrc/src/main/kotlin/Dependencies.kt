@@ -29,7 +29,7 @@ object Kotlin {
 
 object BuildPlugins {
     object Versions {
-        const val gradleVersion = "7.0.1"
+        const val gradleVersion = "6.9"
     }
 
     const val application   = "application"

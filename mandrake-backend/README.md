@@ -5,7 +5,7 @@
 ## Gradle Tasks
 
  - `./gradlew clean`
- - `./gradlew build`
+ - `./gradlew buildApp`
  - `./gradlew build -t` -> for auto-reloading. See below.
  - `./gradlew runApp`
  - `./gradlew runUnitTests`

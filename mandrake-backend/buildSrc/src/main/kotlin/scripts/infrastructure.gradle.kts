@@ -24,14 +24,29 @@ tasks.named<Wrapper>("wrapper") {
     distributionType = Wrapper.DistributionType.ALL
 }
 
+tasks.register("buildApp") {
+    description = "Builds Application."
+    dependsOn("build")
+}
+
 tasks.register("runApp") {
-    description = "Runs App in Development Mode."
+    description = "Runs Application."
     dependsOn("run")
 }
 
 tasks.register("runUnitTests") {
     description = "Runs all Unit Tests."
     dependsOn("test")
+}
+
+tasks.register("runIntegrationTests") {
+    description = "Runs all Integration Tests."
+    TODO()
+}
+
+tasks.register("runServerTests") {
+    description = "Runs all Server Tests."
+    TODO()
 }
 
 // -------------------------------------------------------------------------------------
