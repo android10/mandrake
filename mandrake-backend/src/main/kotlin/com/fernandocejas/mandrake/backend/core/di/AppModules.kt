@@ -12,7 +12,7 @@ import org.koin.dsl.*
 
 fun KoinApplication.loadModules(environment: ApplicationEnvironment): KoinApplication {
     val configModule = module {
-        single { Configuration(environment) }
+        single { Configuration(environment, Feature.values()) }
         single { SanityChecker(environment) } }
 
     return modules(configModule)

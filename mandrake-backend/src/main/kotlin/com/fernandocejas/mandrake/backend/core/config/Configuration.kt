@@ -25,7 +25,8 @@ import org.koin.core.component.*
  *
  * @see [application.conf]
  */
-class Configuration(private val environment: ApplicationEnvironment) {
+class Configuration(private val environment: ApplicationEnvironment,
+                    private val features: Array<Feature>) {
 
     val developmentMode = environment.developmentMode
     val appEnvironment = mapEnvironment(environment)
