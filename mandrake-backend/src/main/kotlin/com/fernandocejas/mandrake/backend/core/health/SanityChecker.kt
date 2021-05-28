@@ -19,16 +19,15 @@ import com.fernandocejas.mandrake.backend.core.config.*
 import com.fernandocejas.mandrake.backend.core.flags.*
 import io.ktor.application.*
 
-class SanityChecker(private val environment: ApplicationEnvironment) {
+class SanityChecker(private val environment: ApplicationEnvironment,
+                    private val features: Array<Feature>) {
 
     /**
      * Performs a set of sanity checks in order to run the system safer.
      *
      * @see [validateFeatureFlags]
      */
-    fun perform() {
-        validateFeatureFlags()
-    }
+    fun perform() = validateFeatureFlags()
 
     /**
      * Being defensive here due to the nature of HOCON files using String literals:
@@ -36,7 +35,7 @@ class SanityChecker(private val environment: ApplicationEnvironment) {
      *  - Make sure enabled environments match with {}.
      */
     private fun validateFeatureFlags() {
-        Feature.values().map {
+        features.map {
             val feature = environment.config.propertyOrNull("${Configuration.PROPERTY_FEATURES}.${it.name}")
             requireNotNull(feature) { "INVALID Feature Flags Configuration: Check 'application.conf', 'features' section." }
             feature.getList().map { environment -> Environment.valueOf(environment) }
